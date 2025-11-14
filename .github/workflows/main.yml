@@ -79,4 +79,9 @@ jobs:
           path: zap-output.xml
         if: always() 
 
+  prod:
+    runs-on: ubuntu-latest
+    needs: zap_baseline
+    steps:
+      - run: echo "This is a deploy step."
 
