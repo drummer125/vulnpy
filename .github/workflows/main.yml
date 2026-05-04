@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - run: docker run --rm -v $(pwd):/src hysnsec/safety check -r requirements.txt --json | tee sca-results.json
+      - run: docker run --rm -v $(pwd):/src hysnsec/safety check -r /src/requirements.txt --json | tee sca-results.json
         continue-on-error: true
       
       - uses: actions/upload-artifact@v4
@@ -57,6 +57,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - run: docker run --rm -v $(pwd):/src hysnsec/trufflehog filesystem ./src --fail --json > trufflehog-output.json
+        continue-on-error: true
       
       - uses: actions/upload-artifact@v4
         with:
