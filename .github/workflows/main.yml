@@ -35,7 +35,7 @@ jobs:
 
   sast:
     runs-on: ubuntu-latest
-    needs: [sca,secret_scanning]
+    needs: test
     steps:
       - uses: actions/checkout@v2
 
