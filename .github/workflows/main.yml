@@ -29,5 +29,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Safety
-          path: oast-results.json
+          path: sca-results.json
         if: always()
